@@ -40,7 +40,7 @@ const Forecast = ({forecastWeather}) => {
                                     <tr>
                                         <th scope="col">Date and time</th>                    
                                         <th scope="col">Predicted temp</th>
-                                        <th scope="col">Predicted Weather</th>               
+                                        <th scope="col">Weather</th>               
                                         <th scope="col"></th>               
                                     </tr>                                
                                 </thead>

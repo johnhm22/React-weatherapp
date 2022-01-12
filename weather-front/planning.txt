@@ -1,0 +1,62 @@
+FRONTEND
+
+install create-react-app and create app
+
+
+How does CitySearchForm work?
+calls function with api for backend which, in turn, calls api for weatherApi
+weatherApi returns weather data to backend which returns data to function in react component
+CitySearchForm is a component in the BrowserRouter list in App.js
+It has two props; a function for today's weather and a function for the 5-day foecast
+
+
+
+App.js
+Components:
+i). CitySearchForm.js (props: function for today's weather; function for forecast weather)
+ii). Today.js (props: state for today's weather)
+iii). Forecast.js (props: state for 5-day forecast weather)
+
+Functions:
+i). Today function calls backend api for today's weather, passing in the city name as an argument
+ii). Forecast function calls backend api for 5-day weather, passing in the city name as an argument
+
+State:
+i). State for today's weather
+ii). State for 5-day forecast weather
+
+
+CitySearchForm.js (home page) has two buttons; today's weather and 5-day forecast
+Each will call a different handleFunction
+One handleFunction will execute the function that calls the api for today's weather. It will then render the Today.js component.
+Another handleFunction will execute the function that calls the api for the 5-day forecast. It will then render the Forecast.js component.
+Note: the functions (today and 5-day) which call the api will be passed from App.js as props
+
+Today.js
+Receives, as a prop, details of today's weather
+Renders a page to display the weather
+Has two buttons:
+i). One button will render CitySearchForm.js component so the user can choose another city
+ii). A second button to render Forecast.js for the defined city
+
+Forecast.js
+Receives, as a prop, details of the 5-day forecast
+Renders a page to display the 5-day forecast
+Also has a button to render CitySearchForm.js component
+
+
+BACKEND
+
+
+
+
+today's weather function is defined in App.js and passed into CitySearchForm as a prop
+When form containing city name is submitted this will execute a handleFunction which will execute
+the function to populate the state for today's weather held in App.js. This handle function will then render the component
+for today's weather using navigate('./today')
+
+Forecast.js is also shown in BrowserRouter list of components in App.js and state of 5-day weather is passed in as a prop
+
+
+
+
